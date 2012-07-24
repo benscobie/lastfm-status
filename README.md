@@ -1,10 +1,8 @@
-Last.fm Status
-==============
+# Last.fm Status
 
-Last.fm Status uses the Last.fm API to show your currently playing track. It attempts to minimize overhead by setting the next call to the current playing tracks duration.
+Last.fm Status uses the Last.fm API to show your currently playing track.
 
-Install
--------
+## Install
 
 Download the .js file and include it on the page you want to display your currently played track, such as:
 ```html
@@ -41,7 +39,6 @@ Customize the CSS to your liking, I use the following on my website:
 }
 ```
 
-Contribute
-----------
+## Contribute
 
 Feel free to improve upon this in any way.
