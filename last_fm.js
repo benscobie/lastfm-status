@@ -1,14 +1,13 @@
 $(document).ready(function(){
 	var settings = {
-		username: 'username',
-		apikey: 'apikey',
+		username: 'Sc00by22',
+		apikey: '7644924d2acf3d8b0e750956b0da3cfe',
 		updateInterval: 60000,
 	}
 	
 	var curName;
 	var nowPlaying;
-	var number = 2; // 1 doesn't work for tracks that aren't currently playing for whatever reason
-	var lastFMUrl = 'http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=' + settings.username + '&api_key=' + settings.apikey + '&limit=' + number + '&format=json&callback=?';
+	var lastFMUrl = 'http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=' + settings.username + '&api_key=' + settings.apikey + '&limit=1&format=json&callback=?';
 	
 	function getLastFM() {
 		$.getJSON(lastFMUrl, function(data){
