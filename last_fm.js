@@ -7,7 +7,7 @@ $(document).ready(function(){
 	
 	var curName;
 	var nowPlaying;
-	var lastFMUrl = 'http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=' + settings.username + '&api_key=' + settings.apikey + '&limit=1&format=json&callback=?';
+	var lastFMUrl = 'http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=' + settings.username + '&api_key=' + settings.apikey + '&limit=2&format=json&callback=?';
 	
 	function getLastFM() {
 		$.getJSON(lastFMUrl, function(data){
