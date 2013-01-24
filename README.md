@@ -11,7 +11,7 @@ Download the .js file and include it on the page you want to display your curren
 
 Add the following HTML to your page.
 ```html
-<div class="lfm">Loading</div>
+<div id="lfm">Loading</div>
 ```
 
 ```js
