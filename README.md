@@ -22,6 +22,10 @@ window.onload = function() {
 };
 ```
 
+## Example:
+
+See demo here: http://sfate.github.com/lastfm-status/
+
 ## Contribute
 
 Feel free to improve upon this in any way.
