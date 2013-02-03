@@ -42,20 +42,24 @@ var LastFMStatus = {
   },
 
   updateInfo: function(data) {
-    var track = data.recenttracks.track[0];
-    var trackInfo = {
-      song    : track.name,
-      artist  : track.artist["#text"],
-      album   : track.album["#text"],
-      image   : track.image[1]["#text"],
-      playing : (track["@attr"] ? true : false)
-    };
-    this.trackInfo = (this.trackInfo || {});
+    if (data.error) {
+      this.trackInfo = data;
+    } else {
+      var track = data.recenttracks.track[0];
+      var trackInfo = {
+        song    : track.name,
+        artist  : track.artist["#text"],
+        album   : track.album["#text"],
+        image   : track.image[1]["#text"],
+        playing : (track["@attr"] ? true : false)
+      };
+      this.trackInfo = (this.trackInfo || {});
 
-    if (this.songChanged(trackInfo)) {
-      this.trackInfo = trackInfo;
-      this.updateView();
+      if (this.songChanged(trackInfo)) {
+        this.trackInfo = trackInfo;
+      }
     }
+    this.updateView();
     setTimeout(function() {LastFMStatus.fetch()}, this.updateDelay);
   },
 
@@ -64,6 +68,8 @@ var LastFMStatus = {
   },
 
   updateView: function() {
+    var status, message,
+    userlink = ' ( <a target="__blank" href="http://www.last.fm/user/' + this.username + '">last.fm</a> )';
     var statusBox = document.getElementById('lfm');
     if (!statusBox) {
       var view = document.createElement('div');
@@ -71,9 +77,13 @@ var LastFMStatus = {
       document.body.appendChild(view);
       statusBox = document.getElementById('lfm');
     }
-    var status = this.trackInfo.playing ? 'Now Playing: ' : 'Last Played: ';
-    statusBox.innerHTML = status+'<strong>'+this.trackInfo.song+'</strong> by <strong>'+this.trackInfo.artist+'</strong> '+
-                          '( <a href="http://www.last.fm/user/' + this.username + '">last.fm</a> )';
-
+    if (this.trackInfo.error) {
+      status   = "Error: ";
+      message  = '<strong>'+this.trackInfo.message+'</strong>';
+    } else {
+      status = this.trackInfo.playing ? 'Now Playing: ' : 'Last Played: ';
+      message  = '<strong>'+this.trackInfo.song+'</strong> by <strong>'+this.trackInfo.artist+'</strong>';
+    }
+    statusBox.innerHTML = status + message + userlink;
   }
 };
