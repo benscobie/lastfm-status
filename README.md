@@ -4,12 +4,12 @@ Last.fm Status uses the Last.fm API to show your currently playing track.
 
 ## Install
 
-Download the .js file and include it on the page you want to display your currently played track, such as:
+Download the .js file or use lastest and include it on the page you want to display your currently played track, such as:
 ```html
 <script type="text/javascript" src="https://raw.github.com/Sfate/lastfm-status/master/last_fm.js"></script>
 ```
 
-Add the following HTML to your page.
+Add the following HTML to your page. If div block not added then info will appear at the end of page.
 ```html
 <div id="lfm">Loading</div>
 ```
