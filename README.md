@@ -1,15 +1,15 @@
-# Last.fm Status
+# Last.fm Status - No jQuery
 
 Last.fm Status uses the Last.fm API to show your currently playing track.
 
 ## Install
 
-Download the .js file or use lastest and include it on the page you want to display your currently played track, such as:
+Download the .js file or use the lastest from here and include it on the page you want to display your last or currently playing track, such as:
 ```html
-<script type="text/javascript" src="https://raw.github.com/Sfate/lastfm-status/master/last_fm.js"></script>
+<script type="text/javascript" src="https://raw.github.com/benscobie/lastfm-status/nojquery/last_fm.js"></script>
 ```
 
-Add the following HTML to your page. If div block not added then info will appear at the end of page.
+Add the following HTML to your page. If the div block is not added then the track info will appear at the end of the page.
 ```html
 <div id="lfm">Loading</div>
 ```
@@ -21,6 +21,17 @@ window.onload = function() {
   });
 };
 ```
+
+Preferably you would specify your own Last.fm API Key by using the following instead:
+```js
+window.onload = function() {
+  LastFMStatus.init({
+    username: "desired user name",
+	apikey: "key"
+  });
+};
+```
+
 
 ## Example:
 
