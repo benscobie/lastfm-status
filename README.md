@@ -63,6 +63,10 @@ a, a:visited {
 
 See a demo by Sfate here: http://sfate.github.com/lastfm-status/
 
+## Credits:
+
+* [Alexey Bobyrev](https://github.com/Sfate) - Created the pure JavaScript version
+
 ## Contribute
 
 Feel free to improve upon this in any way.
