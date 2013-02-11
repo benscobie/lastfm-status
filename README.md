@@ -17,7 +17,7 @@ Download the last_fm.js file and include it on the page(s) you want to display y
 ```
 
 Preferably you would specify your own Last.fm API Key (aquired at www.last.fm/api) like so:
-```js
+```html
 <script>
 	window.onload = function() {
 		LastFMStatus.init({
