@@ -27,7 +27,7 @@ var LastFMStatus = {
 		}
 		var script = document.createElement('script');
 		script.src = this.url('LastFMStatus.updateInfo');
-		script.id  = 'lfm_state_json'
+		script.id  = 'lfm_state_json';
 		document.body.appendChild(script);
 	},
 
@@ -48,7 +48,9 @@ var LastFMStatus = {
 			}
 		}
 		this.updateView();
-		setTimeout(function() {LastFMStatus.fetch()}, this.updateDelay);
+		setTimeout(function() {
+			LastFMStatus.fetch();
+		}, this.updateDelay);
 	},
 
 	songChanged: function(newInfo) {
