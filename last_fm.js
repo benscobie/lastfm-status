@@ -17,7 +17,7 @@ var LastFMStatus = {
 	},
 
 	url: function(callback) {
-		return 'http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user='+this.username+'&api_key='+this.apikey+'&limit=2&format=json&callback='+callback;
+		return 'https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user='+this.username+'&api_key='+this.apikey+'&limit=2&format=json&callback='+callback;
 	},
 
 	fetch: function() {
